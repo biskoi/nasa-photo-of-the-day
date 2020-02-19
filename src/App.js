@@ -37,11 +37,16 @@ function App() {
     <div className="App">
 
       <h1>Nasa Photo of the Day</h1>
-      <PhotoContainer data = {item} />
 
-      <div>
-        <button onClick = {() => photoHandler(0)}>Previous Photo</button>
-        <button onClick = {() => photoHandler(1)}>Next Photo</button>
+      <div className = 'PhotoContainer'>
+        
+        <PhotoContainer data = {item}/>
+
+        <div className = 'buttons'>
+          <button onClick = {() => photoHandler(0)}>Previous Photo</button>
+          <button onClick = {() => photoHandler(1)}>Next Photo</button>
+        </div>
+
       </div>
 
     </div>

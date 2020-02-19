@@ -31,3 +31,14 @@
     transform: rotate(360deg);
   }
 }
+
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 2%;
+}
+
+.PhotoContainer{
+  border: solid 1px grey;
+  margin: 0 3% 5% 3%;
+}
