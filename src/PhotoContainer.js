@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import './PhotoContainer.css';
 
 function PhotoContainer(props) {
@@ -7,7 +7,7 @@ function PhotoContainer(props) {
 
         <div>
             <h3>{props.data.title}, {props.data.date}</h3>
-            <img src = {props.data.url}/>
+            <img src = {props.data.url} alt = 'A certain celestial body'/>
             <p>{props.data.explanation}</p>
         </div>
 
