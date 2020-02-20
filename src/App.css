@@ -1,5 +1,13 @@
+#root{
+  background-color: black;
+}
+body{
+  background-color: black;
+}
+
 .App {
   text-align: center;
+  background-color: black;
 }
 
 .App-logo {
@@ -32,7 +40,7 @@
   }
 }
 
-.buttons {
+/* .buttons {
   display: flex;
   justify-content: space-evenly;
   padding-bottom: 2%;
@@ -41,4 +49,4 @@
 .PhotoContainer{
   border: solid 1px grey;
   margin: 0 3% 5% 3%;
-}
+} */
