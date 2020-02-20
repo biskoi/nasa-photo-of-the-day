@@ -3,22 +3,7 @@ import "./App.css";
 import PhotoContainer from './PhotoContainer';
 import Axios from 'axios';
 import styled from 'styled-components';
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  Card, 
-  Jumbotron as ReactJumbotron,
-  Button as ReactButton
-} from 'reactstrap';
+import {Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, Card, Jumbotron as ReactJumbotron, Button as ReactButton, ButtonGroup as ReactButtonGroup} from 'reactstrap';
 // import dummyData from './dummydata';
 
 const PhotoCard = styled(Card)`
@@ -28,7 +13,7 @@ const PhotoCard = styled(Card)`
 `;
 
 const Button = styled(ReactButton)`
-margin: 2%;
+margin: 2% 0;
 `;
 
 const Jumbotron = styled(ReactJumbotron)`
@@ -46,6 +31,20 @@ border-bottom: solid 1px grey;
 const NavImg = styled.img`
 width: 3.5rem;
 margin: 0;
+`;
+
+const ButtonGroup = styled(ReactButtonGroup)`
+width: 30%;
+
+  Button{
+    width: 50%;
+    border-radius: 20px;
+  }
+
+  p{
+    margin: 0.5%;
+  }
+
 `;
 
 function App() {
@@ -73,7 +72,7 @@ function App() {
       setDay(day - 1);
     } else {
       setDay(day + 1);
-    }
+    } 
 
     console.log(`button ${arg} clicked`);
 
@@ -95,18 +94,18 @@ function App() {
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
-                  Options
+                  Don't
                 </DropdownToggle>
                 <DropdownMenu right>
                   <DropdownItem>
-                    Option 1
+                    Theres
                   </DropdownItem>
                   <DropdownItem>
-                    Option 2
+                    Nothing
                   </DropdownItem>
                   <DropdownItem divider />
                   <DropdownItem>
-                    Reset
+                    Here
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
@@ -124,8 +123,11 @@ function App() {
         <PhotoCard>
         <PhotoContainer data = {item}/>
         <div className = 'buttons'>
-          <Button color = 'secondary' onClick = {() => photoHandler(0)}>Previous Photo</Button>
-          <Button color = 'secondary' onClick = {() => photoHandler(1)}>Next Photo</Button>
+          <ButtonGroup>
+          <Button color = 'secondary' onClick = {() => photoHandler(0)}>Left</Button>
+          <p/>
+          <Button color = 'secondary' onClick = {() => photoHandler(1)}>Right</Button>
+          </ButtonGroup>
         </div>
         </PhotoCard>
 
