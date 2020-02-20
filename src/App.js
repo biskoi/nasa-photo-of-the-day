@@ -3,13 +3,22 @@ import "./App.css";
 import PhotoContainer from './PhotoContainer';
 import Axios from 'axios';
 import styled from 'styled-components';
-import {Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, Card, Jumbotron as ReactJumbotron, Button as ReactButton, ButtonGroup as ReactButtonGroup} from 'reactstrap';
+import {Collapse, Navbar as ReactNavbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, Card, Jumbotron as ReactJumbotron, Button as ReactButton, ButtonGroup as ReactButtonGroup} from 'reactstrap';
 // import dummyData from './dummydata';
 
+const Navbar = styled(ReactNavbar)`
+justify-content: space-evenly;
+`;
+
 const PhotoCard = styled(Card)`
-  padding-bottom: 5%;
+padding: 1% 0;
   background-color: black;
   color: white;
+
+  @media (max-width: 500px) {
+    padding: 5% 0;
+  }
+
 `;
 
 const Button = styled(ReactButton)`
@@ -26,6 +35,21 @@ align-items: center;
 padding: 0;
 margin: 2% 2%;
 border-bottom: solid 1px grey;
+
+  @media (max-width: 500px) {
+
+    padding: 5% 0;
+
+    h1{
+      font-size: 2rem;
+    }
+
+    p{
+      font-size: 1rem;
+      text-align: center
+    }
+  }
+
 `;
 
 const NavImg = styled.img`
@@ -35,6 +59,7 @@ margin: 0;
 
 const ButtonGroup = styled(ReactButtonGroup)`
 width: 30%;
+margin-top: 2%;
 
   Button{
     width: 50%;
@@ -43,6 +68,10 @@ width: 30%;
 
   p{
     margin: 0.5%;
+  }
+
+  @media (max-width: 500px) {
+    width: 80%;
   }
 
 `;
@@ -62,6 +91,7 @@ function App() {
       .catch(err => {alert('Fetch failed. ' + err)})
       console.log('API called.');
   }, [day])
+
 
   useEffect(() => {
     console.log(`requested day: ${day} today's date: ${today}`);

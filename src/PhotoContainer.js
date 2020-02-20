@@ -4,17 +4,34 @@ import {CardImg as ReactCard, CardText as ReactCardText, CardBody, CardTitle as 
 import styled from 'styled-components';
 
 const CardImg = styled(ReactCard)`
-width: 50%;
+width: 40%;
 margin: 3%;
 border: solid white 1px;
+
+    @media (max-width: 500px) {
+        width: 90%;
+    }
+
 `;
 
 const CardTitle = styled(ReactTitle)`
 margin-top: 1%;
+width: 100%;
+
+@media (max-width: 500px){
+    font-size: 1.3rem;
+}
+
 `;
 
 const CardText = styled(ReactCardText)`
-margin: 0 10%;
+margin: auto;
+
+    @media (max-width: 500px) {
+        text-align: justify;
+        width: 90%;
+    }
+
 `;
 
 function PhotoContainer(props) {
